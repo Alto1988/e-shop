@@ -1,0 +1,5 @@
+*shop/migrations/*
+*shop_backend/__pycache__/settings.cpython-39.pyc*
+*shop_backend/settings.py*
+*shop/__pycache__/*
+*shop_backend/__pycache__/urls.cpython-39.pyc*
