@@ -36,7 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'shop.apps.ShopConfig',
+    'shop',
 ]
 
 MIDDLEWARE = [
@@ -100,9 +100,7 @@ AUTH_PASSWORD_VALIDATORS = [
         'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static/'),
-]
+
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
