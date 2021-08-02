@@ -5,15 +5,15 @@ from shop.models import Product
 
 class Cart(object):
     def __init__(self, request):
-        self.sesstion = request.sesstion
-        cart = self.sesstion.get(settings.CART_SESSION_ID)
+        self.session = request.session
+        cart = self.session.get(settings.CART_SESSION_ID)
         if not cart:
-            cart = self.sesstion[settings.CART_SESSION_ID] = {}
+            cart = self.session[settings.CART_SESSION_ID] = {}
         self.cart = cart
 
     def save(self):
-        self.sesstion[settings.CART_SESSION_ID] = self.cart
-        self.sesstion.modified = True
+        self.session[settings.CART_SESSION_ID] = self.cart
+        self.session.modified = True
 
     def remove(self, product):
         product_id = str(product.id)
@@ -50,8 +50,8 @@ class Cart(object):
         return sum(item['quantity'] for item in self.cart.values())
 
     def clear(self):
-        del self.sesstion[settings.CART_SESSION_ID]
-        # self.sesstion.modified = True
+        del self.session[settings.CART_SESSION_ID]
+        # self.session.modified = True
         self.save()
 
     def get_total_price(self):
