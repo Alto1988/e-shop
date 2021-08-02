@@ -1,2 +1,3 @@
 *shopenv/*
 .vscode/*
+shop_backend/db.sqlite3
